@@ -51,15 +51,20 @@ public class ClienteMenu extends JFrame {
 		JMenuItem jMIlogoutsair = new JMenuItem("Logout e sair");
 		jMopcoes.add(jMIlogoutsair);
 		
+		//dividir o nome pra mostrar apenas o primeiro e segundo
+		String[] elemento = this.loggeduser.getNome_usuario().split(" ");
+        String nome = elemento[0];
+        String sobrenome = elemento[1];
+		
 		JLabel jLsaudacao = new JLabel();
-		jLsaudacao.setText("Olá, " + this.loggeduser.getNome_usuario());
+		jLsaudacao.setText("Olá, " + nome +" "+ sobrenome);
 		jLsaudacao.setFont(new Font("Yu Gothic UI", Font.PLAIN, 16));
-		jLsaudacao.setBounds(123, 75, 346, 25);
+		jLsaudacao.setBounds(122, 62, 346, 25);
 		contentPane.add(jLsaudacao);
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel.setBounds(158, 130, 438, 419);
+		panel.setBounds(159, 103, 438, 400);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -75,7 +80,7 @@ public class ClienteMenu extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_1.setBounds(0, 135, 438, 284);
+		panel_1.setBounds(0, 135, 438, 265);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -90,11 +95,6 @@ public class ClienteMenu extends JFrame {
 		JButton jBextrato = new JButton("Extrato");
 		jBextrato.setBounds(59, 152, 85, 28);
 		panel_1.add(jBextrato);
-		
-		JButton jBlimite = new JButton("Limite");
-		jBlimite.setBackground(new Color(245, 228, 250));
-		jBlimite.setBounds(266, 152, 85, 28);
-		panel_1.add(jBlimite);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(245, 228, 250));
@@ -116,6 +116,15 @@ public class ClienteMenu extends JFrame {
 		panel_2_1_1_1.setBounds(266, 71, 85, 57);
 		panel_1.add(panel_2_1_1_1);
 		
+		JButton jBlimite = new JButton("Limite");
+		jBlimite.setBounds(266, 152, 85, 28);
+		panel_1.add(jBlimite);
+		
+        JButton jBsair = new JButton("Sair");
+        jBsair.setBackground(new Color(254, 235, 237));
+        jBsair.setBounds(337, 525, 85, 21);
+        contentPane.add(jBsair);
+		
 		jMIlogoutsair.addActionListener(e -> {
 			this.loggeduser.logout();
 			System.exit(0);
@@ -126,6 +135,10 @@ public class ClienteMenu extends JFrame {
 			this.dispose();
 		});
 		
+		jBsair.addActionListener(e -> {
+			System.exit(0);
+		});
+
 		jBsaque.addActionListener(e -> {
 			Saque frame = new Saque(this.loggeduser);
 			frame.setVisible(true);
@@ -151,21 +164,42 @@ public class ClienteMenu extends JFrame {
 		            String senha = JOptionPane.showInputDialog(this, "Digite a senha de"
 		                + "usuário para vizializar o saldo.", "Confirmar usuário.", JOptionPane.INFORMATION_MESSAGE);
 		                
-		            if (this.loggeduser.login(senha)) {  
+		            if (this.loggeduser.getSenha_cliente().equals(senha)) {  
 		                Double saldo = this.loggeduser.consultarSaldo();
 	                    jLsaldo.setText(" "+ saldo);
 	                    jTBvisualizarsaldo.setText("Ocultar saldo");
 	                    jLsaldo.setText("Você ainda não possui uma conta :(");
 		                
-		                jLsaldo.setText(" "+ saldo);
+		                jLsaldo.setText("R$ "+ saldo);
 		                jTBvisualizarsaldo.setText("Ocultar saldo");
 		            } else {
-		                JOptionPane.showMessageDialog(this, "Senha incorreta!", "Tente novamente.", JOptionPane.ERROR);
+		                JOptionPane.showMessageDialog(this, "Senha incorreta!", "Tente novamente.", JOptionPane.ERROR_MESSAGE);
 		            }
 		        } else {
 		        	jTBvisualizarsaldo.setText("Mostrar saldo");
 		            jLsaldo.setText("XXX");
 		        }
+		});
+		
+		jBlimite.addActionListener(e -> {
+			String senha = JOptionPane.showInputDialog(this, "Digite a senha de"
+                + "usuário para vizializar o saldo.", "Confirmar usuário.", JOptionPane.INFORMATION_MESSAGE);
+            if (this.loggeduser.getSenha_cliente().equals(senha)) {
+				try {
+					Double limite = this.loggeduser.consultarLimite();
+					
+					if (limite >= 0) {
+		            	JOptionPane.showMessageDialog(this, "R$ " + limite, "Limite disponível: ", JOptionPane.INFORMATION_MESSAGE);
+					} else {
+		                JOptionPane.showMessageDialog(this, "Não há limite disponível para o tipo de conta poupança.", "Sem limite disponível!", JOptionPane.ERROR_MESSAGE);
+					}
+
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+            } else {
+                JOptionPane.showMessageDialog(this, "Senha incorreta!", "Tente novamente.", JOptionPane.ERROR_MESSAGE);
+            }
 		});
 		
 	}

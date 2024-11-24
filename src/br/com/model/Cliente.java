@@ -46,7 +46,13 @@ public class Cliente extends Usuario {
 		return "";
 	}
 
-	public double consultarLimite() {
-		return 0;
+	public double consultarLimite() throws Exception {
+        Conta conta = ContaDAO.findByClienteId(this.getId_usuario());
+        if (conta instanceof ContaCorrente) {
+        	ContaCorrente cc = (ContaCorrente) conta; 
+        	return cc.getLimite();
+        } else {
+        	return -1;
+        }
 	}	
 }

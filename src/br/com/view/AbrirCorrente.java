@@ -280,7 +280,7 @@ public class AbrirCorrente extends JFrame {
 		        cl.setNome_usuario(jTnome.getText());
 		        cl.setCpf_usuario(String.valueOf(jFTcpf.getText().replaceAll("\\D", "")));
 		        cl.setNascimento_usuario(LocalDate.parse(jFTnascimento.getText()));
-		        cl.setSenha_cliente(jLsenha.getText());
+		        cl.setSenha_cliente(JTsenha.getText());
 		        cl.setTelefone_usuario(String.valueOf(jFTtelefone.getText().replaceAll("\\D", "")));
 		        cl.setTipo_usuario("CLIENTE");
 		        cl.setUser_usuario(jTusuario.getText());

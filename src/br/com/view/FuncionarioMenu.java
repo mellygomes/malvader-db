@@ -33,8 +33,13 @@ public class FuncionarioMenu extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		//dividir o nome pra mostrar apenas o primeiro e segundo
+		String[] elemento = this.loggeduser.getNome_usuario().split(" ");
+        String nome = elemento[0];
+        String sobrenome = elemento[1];
+		
 		JLabel jLsaudacao = new JLabel();
-		jLsaudacao.setText("Olá, "+ this.loggeduser.getNome_usuario());
+		jLsaudacao.setText("Olá, " + nome +" "+ sobrenome);
 		jLsaudacao.setFont(new Font("Yu Gothic UI", Font.PLAIN, 16));
 		jLsaudacao.setBounds(123, 75, 346, 25);
 		contentPane.add(jLsaudacao);

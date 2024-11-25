@@ -114,6 +114,7 @@ public class ConsultaFuncionario extends JFrame {
 		panel.add(jLcodigo);
 		
 		JButton jBvoltar = new JButton();
+		jBvoltar.setText("Voltar");
 		jBvoltar.setBounds(280, 394, 93, 27);
 		contentPane.add(jBvoltar);
 		

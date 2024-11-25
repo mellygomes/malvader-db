@@ -97,22 +97,22 @@ public class ClienteMenu extends JFrame {
 		panel_1.add(jBextrato);
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(245, 228, 250));
+		panel_2.setBackground(new Color(247, 247, 247));
 		panel_2.setBounds(59, 71, 85, 57);
 		panel_1.add(panel_2);
 		
 		JPanel panel_2_1 = new JPanel();
-		panel_2_1.setBackground(new Color(245, 228, 250));
+		panel_2_1.setBackground(new Color(255, 255, 255));
 		panel_2_1.setBounds(266, 176, 85, 57);
 		panel_1.add(panel_2_1);
 		
 		JPanel panel_2_1_1 = new JPanel();
-		panel_2_1_1.setBackground(new Color(245, 228, 250));
+		panel_2_1_1.setBackground(new Color(255, 255, 255));
 		panel_2_1_1.setBounds(59, 176, 85, 57);
 		panel_1.add(panel_2_1_1);
 		
 		JPanel panel_2_1_1_1 = new JPanel();
-		panel_2_1_1_1.setBackground(new Color(245, 228, 250));
+		panel_2_1_1_1.setBackground(new Color(247, 247, 247));
 		panel_2_1_1_1.setBounds(266, 71, 85, 57);
 		panel_1.add(panel_2_1_1_1);
 		
@@ -183,7 +183,7 @@ public class ClienteMenu extends JFrame {
 		
 		jBlimite.addActionListener(e -> {
 			String senha = JOptionPane.showInputDialog(this, "Digite a senha de"
-                + "usuário para vizializar o saldo.", "Confirmar usuário.", JOptionPane.INFORMATION_MESSAGE);
+                + "usuário para vizializar o limite disponível.", "Confirmar usuário.", JOptionPane.INFORMATION_MESSAGE);
             if (this.loggeduser.getSenha_cliente().equals(senha)) {
 				try {
 					Double limite = this.loggeduser.consultarLimite();

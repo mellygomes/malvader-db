@@ -37,23 +37,23 @@ public class ConsultaCliente extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel jLnome = new JLabel("New label");
+		JLabel jLnome = new JLabel();
 		jLnome.setBounds(28, 28, 283, 13);
 		panel.add(jLnome);
 		
-		JLabel jLcpf = new JLabel("New label");
+		JLabel jLcpf = new JLabel();
 		jLcpf.setBounds(348, 28, 185, 13);
 		panel.add(jLcpf);
 		
-		JLabel jLnascimento = new JLabel("New label");
+		JLabel jLnascimento = new JLabel();
 		jLnascimento.setBounds(28, 51, 172, 13);
 		panel.add(jLnascimento);
 		
-		JLabel jLtelefone = new JLabel("New label");
+		JLabel jLtelefone = new JLabel();
 		jLtelefone.setBounds(196, 51, 144, 13);
 		panel.add(jLtelefone);
 		
-		JLabel jLusuario = new JLabel("New label");
+		JLabel jLusuario = new JLabel();
 		jLusuario.setBounds(402, 51, 131, 13);
 		panel.add(jLusuario);
 		
@@ -78,7 +78,7 @@ public class ConsultaCliente extends JFrame {
 		jBvoltar.setBounds(288, 417, 93, 27);
 		contentPane.add(jBvoltar);
 		
-		JLabel jLnao_encontrado = new JLabel("New label");
+		JLabel jLnao_encontrado = new JLabel();
 		jLnao_encontrado.setBounds(418, 123, 208, 13);
 		contentPane.add(jLnao_encontrado);
 		
@@ -88,23 +88,23 @@ public class ConsultaCliente extends JFrame {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel jLcep = new JLabel("New label");
+		JLabel jLcep = new JLabel();
 		jLcep.setBounds(10, 10, 77, 13);
 		panel_1.add(jLcep);
 		
-		JLabel jLlocal = new JLabel("New label");
+		JLabel jLlocal = new JLabel();
 		jLlocal.setBounds(186, 10, 201, 13);
 		panel_1.add(jLlocal);
 		
-		JLabel jLnumero = new JLabel("New label");
+		JLabel jLnumero = new JLabel();
 		jLnumero.setBounds(377, 10, 115, 13);
 		panel_1.add(jLnumero);
 		
-		JLabel jLcidade_uf = new JLabel("New label");
+		JLabel jLcidade_uf = new JLabel();
 		jLcidade_uf.setBounds(253, 43, 115, 13);
 		panel_1.add(jLcidade_uf);
 		
-		JLabel jLbairro = new JLabel("New label");
+		JLabel jLbairro = new JLabel();
 		jLbairro.setBounds(10, 43, 172, 13);
 		panel_1.add(jLbairro);
 		

@@ -86,6 +86,15 @@ public class FuncionarioMenu extends JFrame {
 		jBalterar_dados.setBounds(0, 240, 346, 35);
 		panel.add(jBalterar_dados);
 		
+		JPopupMenu popupMenu_alterar = new JPopupMenu();
+		addPopup(jBalterar_dados, popupMenu_alterar);
+		
+		JMenuItem jMIalterar_cliente = new JMenuItem("Alterar dados de cliente");
+		popupMenu_alterar.add(jMIalterar_cliente);
+		
+		JMenuItem jMIalterar_conta = new JMenuItem("Alterar dados de conta");
+		popupMenu_alterar.add(jMIalterar_conta);
+		
 		JButton btncadastro_funcionario = new JButton("Cadastrar novo funcionário");
 		btncadastro_funcionario.setBounds(0, 310, 346, 35);
 		panel.add(btncadastro_funcionario);
@@ -139,9 +148,15 @@ public class FuncionarioMenu extends JFrame {
 		});
 		
 		jBencerrar_conta.addActionListener(e -> {
-			EncerrarConta frame = new EncerrarConta(this.loggeduser);
-			frame.setVisible(true);
-			this.dispose();
+			String senha = JOptionPane.showInputDialog(this, "Digite a senha do"
+	                + "administrador continuar.", "Confirmar permissão.", JOptionPane.INFORMATION_MESSAGE);
+			if (senha.equals("123")) {
+				EncerrarConta frame = new EncerrarConta(this.loggeduser);
+				frame.setVisible(true);
+				this.dispose();
+			} else {
+                JOptionPane.showMessageDialog(this, "Senha incorreta!", "Tente novamente.", JOptionPane.ERROR_MESSAGE);
+			}
 		});
 		
 		jMIcliente.addActionListener(e -> {
@@ -163,9 +178,42 @@ public class FuncionarioMenu extends JFrame {
 		});
 		
 		btncadastro_funcionario.addActionListener(e -> {
-			CadastroFuncionario frame = new CadastroFuncionario(this.loggeduser);
-			frame.setVisible(true);
-			this.dispose();
+			String senha = JOptionPane.showInputDialog(this, "Digite a senha do"
+	                + "administrador continuar.", "Confirmar permissão.", JOptionPane.INFORMATION_MESSAGE);
+			
+			if (senha.equals("123")) {
+				CadastroFuncionario frame = new CadastroFuncionario(this.loggeduser);
+				frame.setVisible(true);
+				this.dispose();
+			} else {
+                JOptionPane.showMessageDialog(this, "Senha incorreta!", "Tente novamente.", JOptionPane.ERROR_MESSAGE);
+			}
+		});
+		
+		jMIalterar_cliente.addActionListener(e -> {
+			String senha = JOptionPane.showInputDialog(this, "Digite a senha do"
+	                + "administrador continuar.", "Confirmar permissão.", JOptionPane.INFORMATION_MESSAGE);
+			
+			if (senha.equals("123")) {
+				AlterarCliente frame = new AlterarCliente(this.loggeduser);
+				frame.setVisible(true);
+				this.dispose();
+			} else {
+                JOptionPane.showMessageDialog(this, "Senha incorreta!", "Tente novamente.", JOptionPane.ERROR_MESSAGE);
+			}
+		});
+		
+		jMIalterar_conta.addActionListener(e -> {
+			String senha = JOptionPane.showInputDialog(this, "Digite a senha do"
+	                + "administrador continuar.", "Confirmar permissão.", JOptionPane.INFORMATION_MESSAGE);
+			
+			if (senha.equals("123")) {
+				AlterarConta frame = new AlterarConta(this.loggeduser);
+				frame.setVisible(true);
+				this.dispose();
+			} else {
+                JOptionPane.showMessageDialog(this, "Senha incorreta!", "Tente novamente.", JOptionPane.ERROR_MESSAGE);
+			}
 		});
 		
 		jBgerar_relatorio.addActionListener(e -> {

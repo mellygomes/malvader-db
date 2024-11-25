@@ -24,15 +24,15 @@ public class CadastroFuncionario extends JFrame {
 		JPanel panel = new JPanel();
 		add(panel);
 		panel.setLayout(null);
-		panel.setBackground(new Color(68, 65, 73));
+		//panel.setBackground(new Color(68, 65, 73));
 		
 		JLabel JLtitulo = new JLabel("Preencha as informações do funcionário");
 		JLtitulo.setBounds(50, 10, 250, 40);
-		JLtitulo.setForeground(Color.WHITE);
+		JLtitulo.setForeground(Color.black);
 		panel.add(JLtitulo);
 		
 		JPanel panelcampos = new JPanel();
-		panelcampos.setBackground(new Color(117, 114, 124));
+		//panelcampos.setBackground(new Color(117, 114, 124));
 		panelcampos.setLayout(null);
 		panelcampos.setBounds(50, 50, 580, 300); 
 		panel.add(panelcampos);
@@ -40,7 +40,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLnome = new JLabel("Nome:");
 		JLnome.setBounds(25, 20, 80, 20);
-		JLnome.setForeground(Color.WHITE);
+		JLnome.setForeground(Color.black);
 		panelcampos.add(JLnome);
 		
 		JTextField JTnome = new JTextField(100);
@@ -50,7 +50,7 @@ public class CadastroFuncionario extends JFrame {
         
         JLabel JLcpf = new JLabel("CPF:");
         JLcpf.setBounds(25, 60, 30, 20);
-        JLcpf.setForeground(Color.WHITE);
+        JLcpf.setForeground(Color.black);
         panelcampos.add(JLcpf);
 		
 		JTextField JTcpf = new JTextField(100);
@@ -60,7 +60,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLrg = new JLabel("RG:");
 		JLrg.setBounds(300, 60, 30, 20);
-		JLrg.setForeground(Color.WHITE);
+		JLrg.setForeground(Color.black);
         panelcampos.add(JLrg);
 		
 		JTextField JTrg = new JTextField(100);
@@ -70,7 +70,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLnascimento = new JLabel("Data de nascimento:");
 		JLnascimento.setBounds(25, 100, 150, 20);
-		JLnascimento.setForeground(Color.WHITE);
+		JLnascimento.setForeground(Color.black);
         panelcampos.add(JLnascimento);
 		
 		JTextField JTnascimento = new JTextField(100);
@@ -80,7 +80,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLtelefone = new JLabel("Telefone:");
 		JLtelefone.setBounds(300, 100, 150, 20);
-		JLtelefone.setForeground(Color.WHITE);
+		JLtelefone.setForeground(Color.black);
         panelcampos.add(JLtelefone);
         
         JTextField JTtelefone = new JTextField(100);
@@ -90,7 +90,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLcargo = new JLabel("Cargo:");
 		JLcargo.setBounds(25, 140, 150, 20);
-		JLcargo.setForeground(Color.WHITE);
+		JLcargo.setForeground(Color.black);
         panelcampos.add(JLcargo);
 		
 		JTextField JTcargo = new JTextField(100);
@@ -100,7 +100,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLcodigo = new JLabel("Codigo:");
 		JLcodigo.setBounds(240, 140, 150, 20);
-		JLcodigo.setForeground(Color.WHITE);
+		JLcodigo.setForeground(Color.black);
         panelcampos.add(JLcodigo);
 		
 		JTextField JTcodigo = new JTextField(100);
@@ -110,12 +110,12 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLendtitulo = new JLabel("Endereço");
 		JLendtitulo.setBounds(25, 170, 100, 20);
-		JLendtitulo.setForeground(Color.WHITE);
+		JLendtitulo.setForeground(Color.black);
         panelcampos.add(JLendtitulo);
 		
         JLabel JLcep = new JLabel("CEP:");
         JLcep.setBounds(25, 210, 150, 20);
-        JLcep.setForeground(Color.WHITE);
+        JLcep.setForeground(Color.black);
         panelcampos.add(JLcep);
 		
 		JTextField JTcep = new JTextField(100);
@@ -125,7 +125,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLlocal = new JLabel("Local:");
 		JLlocal.setBounds(220, 210, 150, 20);
-		JLlocal.setForeground(Color.WHITE);
+		JLlocal.setForeground(Color.black);
         panelcampos.add(JLlocal);
 		
 		JTextField JTlocal = new JTextField(100);
@@ -135,7 +135,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLnum = new JLabel("Numero:");
 		JLnum.setBounds(420, 210, 150, 20);
-		JLnum.setForeground(Color.WHITE);
+		JLnum.setForeground(Color.black);
         panelcampos.add(JLnum);
 		
 		JTextField JTnum = new JTextField(100);
@@ -145,7 +145,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLbairro = new JLabel("Bairro:");
 		JLbairro.setBounds(25, 250, 150, 20);
-		JLbairro.setForeground(Color.WHITE);
+		JLbairro.setForeground(Color.black);
         panelcampos.add(JLbairro);
 		
 		JTextField JTbairro = new JTextField(100);
@@ -155,7 +155,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLcidade = new JLabel("Cidade:");
 		JLcidade.setBounds(220, 250, 150, 20);
-		JLcidade.setForeground(Color.WHITE);
+		JLcidade.setForeground(Color.black);
         panelcampos.add(JLcidade);
 		
 		JTextField JTcidade = new JTextField(100);
@@ -165,7 +165,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLuf = new JLabel("UF:");
 		JLuf.setBounds(415, 250, 100, 20);
-		JLuf.setForeground(Color.WHITE);
+		JLuf.setForeground(Color.black);
         panelcampos.add(JLuf);
 		
 		JTextField JTuf = new JTextField(100);
@@ -176,11 +176,11 @@ public class CadastroFuncionario extends JFrame {
 		//criacao da senha e usuario
 		JLabel JLtitulos = new JLabel("Crie a senha e o nome de usuário do funcionário");
 		JLtitulos.setBounds(100, 360, 290, 40);
-		JLtitulos.setForeground(Color.WHITE);
+		JLtitulos.setForeground(Color.black);
 		panel.add(JLtitulos);
 		
 		JPanel panels = new JPanel();
-		panels.setBackground(new Color(117, 114, 124));
+		//panels.setBackground(new Color(117, 114, 124));
 		panels.setLayout(null);
 		panels.setBounds(100, 400, 500, 140); 
 		panel.add(panels);
@@ -188,7 +188,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLuser = new JLabel("Usuário:");
 		JLuser.setBounds(50, 30, 100, 20);
-		JLuser.setForeground(Color.WHITE);
+		JLuser.setForeground(Color.black);
 		panels.add(JLuser);
 		
 		JTextField JTuser = new JTextField(100);
@@ -198,7 +198,7 @@ public class CadastroFuncionario extends JFrame {
 		
 		JLabel JLsenha= new JLabel("Senha:");
 		JLsenha.setBounds(50, 70, 90, 20);
-		JLsenha.setForeground(Color.WHITE);
+		JLsenha.setForeground(Color.black);
 		panels.add(JLsenha);
 		
 		JPasswordField JTsenha = new JPasswordField (100);
@@ -208,8 +208,18 @@ public class CadastroFuncionario extends JFrame {
 		panels.add(JTsenha);
 		
 		JButton JBcadastrar = new JButton("Cadastrar");
-		JBcadastrar.setBounds(350, 45, 90, 30);
+		JBcadastrar.setBounds(350, 25, 90, 30);
 		panels.add(JBcadastrar);
+		
+		JButton JBvoltar = new JButton("Voltar");
+		JBvoltar.setBounds(350, 70, 90, 30);
+		panels.add(JBvoltar);
+		
+		JBvoltar.addActionListener(e -> {
+			FuncionarioMenu frame = new FuncionarioMenu(this.loggeduser);
+			frame.setVisible(true);
+			this.dispose();
+		});
 		
 		JBcadastrar.addActionListener(e -> {
 			Funcionario f = new Funcionario();

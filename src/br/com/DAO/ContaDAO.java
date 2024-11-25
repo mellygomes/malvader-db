@@ -13,6 +13,8 @@ import java.sql.Timestamp;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 
 public class ContaDAO {
     public static void save(Conta conta) {
@@ -409,7 +411,7 @@ public class ContaDAO {
        return confirma;
     }
    
-    public static boolean updateSaldoMinus(int numero, double valor) throws Exception {
+	public static boolean updateSaldoMinus(int numero, double valor) throws Exception {
         boolean confirma = false;
         
         String queryUpadate = "UPDATE Conta"
@@ -456,6 +458,35 @@ public class ContaDAO {
         }
         
         return confirma;
-    }
+	}
+    
+		public static ArrayList<String> extratoById(int id_conta) {
+			ArrayList<String> list = new ArrayList<>();
+			String query = "SELECT * "
+					+ "FROM Transacao "
+					+ "WHERE fk_id_conta = ? "
+					+ "AND data_hora >= NOW() - INTERVAL 30 DAY";
+			
+			try (Connection con = ConexaoBanco.conectar()) {
+				PreparedStatement pst = con.prepareStatement(query);
+				pst.setInt(1, id_conta);
+				ResultSet rs = pst.executeQuery();
+				
+				while (rs.next()) {
+					String tipo = rs.getString("tipo_transacao");
+					String valor = String.valueOf(rs.getDouble("valor"));
+					String data = String.valueOf(rs.getTimestamp("data_hora"));
+					
+					list.add(tipo);
+					list.add(valor);
+					list.add(data);
+				}
+				
+				ConexaoBanco.desconectar(con);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			return list;
+		}
 }
-        

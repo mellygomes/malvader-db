@@ -2,7 +2,6 @@ package br.com.view;
 
 import br.com.model.Cliente;
 import br.com.model.ContaCorrente;
-import br.com.model.ContaPoupanca;
 import br.com.model.Endereco;
 import br.com.model.Funcionario;
 import javax.swing.*;

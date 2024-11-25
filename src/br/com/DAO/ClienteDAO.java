@@ -418,4 +418,82 @@ public class ClienteDAO {
                 e.printStackTrace();
         }
     }
+    
+    public static void alter(Cliente c) throws Exception {
+    	String querySelect = "SELECT * FROM Cliente WHERE id_cliente = ?";
+    	
+    	String queryCliente = "UPDATE Usuario"
+                + " SET telefone_usuario = ?"
+                + " WHERE id_usuario = ?";
+    	
+    	String queryEnd = "UPDATE Endereco"
+                + " SET cep = ?, local = ?, numero = ?, bairro = ?, cidade = ?, uf = ?"
+                + " WHERE fk_usuario_id = ?";
+    	
+    	 try (Connection con = ConexaoBanco.conectar()) {
+             con.setAutoCommit(false);
+             
+             PreparedStatement pst = con.prepareStatement(querySelect);
+             pst.setInt(1, c.getId_usuario());
+             ResultSet rsUser = pst.executeQuery();
+             
+             if (rsUser.next()) {
+            	 int id = rsUser.getInt("fk_usuario_id");
+            	 
+            	 PreparedStatement pst1 = con.prepareStatement(queryCliente);
+                 pst1.setString(1, c.getTelefone_usuario());
+                 pst1.setInt(2, id);
+                 int rows = pst1.executeUpdate();
+                 
+                 if (rows > 0) {
+                	 Endereco e = c.getEndereco_usuario();
+                	 
+                	 PreparedStatement pste = con.prepareStatement(queryEnd);
+                     pste.setString(1, e.getCep());
+                     pste.setString(2, e.getLocal());
+                     pste.setInt(3, e.getNumeroCasa());
+                     pste.setString(4, e.getBairro());
+                     pste.setString(5, e.getCidade());
+                     pste.setString(6, e.getUf());
+                     pste.setInt(7, id);
+                     int rows_endereco = pste.executeUpdate();
+            	 		
+                     if (rows_endereco > 0) {
+                    	 con.commit();
+                    	 System.out.print("Endereco alterado!");
+                     } else {
+                    	 System.out.print("Erro ao alterar endereco");
+                    	 con.rollback();
+                     }
+                 } else {
+                	 System.out.print("Erro ao alterar telefone");
+                	 con.rollback();
+                 }
+            	 
+             } else {
+            	 System.out.print("Erro ao obter usuario");
+            	 con.rollback();
+             }
+             
+             ConexaoBanco.desconectar(con);
+             
+    	 } catch (SQLException e) {
+    		 e.printStackTrace();
+    	 }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

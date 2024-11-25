@@ -53,7 +53,7 @@ public class Login extends JFrame {
 		panelcampos.setLayout(null);
 				
 		JLabel lblNewLabel = new JLabel("Efetuar login");
-		lblNewLabel.setForeground(new Color(234, 170, 242));
+		lblNewLabel.setForeground(new Color(0, 0, 0));
         lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 19));
         lblNewLabel.setBounds(340, 78, 110, 19);
         panelcampos.add(lblNewLabel);
@@ -64,7 +64,7 @@ public class Login extends JFrame {
 		panelcampos.add(jPsenha);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Usuario");
-		lblNewLabel_1_1.setForeground(new Color(234, 170, 242));
+		lblNewLabel_1_1.setForeground(new Color(0, 0, 0));
 		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_1_1.setBounds(218, 160, 53, 17);
 		panelcampos.add(lblNewLabel_1_1);
@@ -81,19 +81,19 @@ public class Login extends JFrame {
 		panelcampos.add(jBlogin);
 		
 		JLabel lblSenha_1 = new JLabel("Senha");
-		lblSenha_1.setForeground(new Color(234, 170, 242));
+		lblSenha_1.setForeground(new Color(0, 0, 0));
 		lblSenha_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblSenha_1.setBounds(269, 233, 61, 17);
 		panelcampos.add(lblSenha_1);
 		
 		JRadioButton jRcliente = new JRadioButton("Cliente");
-		jRcliente.setForeground(new Color(234, 170, 242));
+		jRcliente.setForeground(new Color(0, 0, 0));
 		jRcliente.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		jRcliente.setBounds(477, 309, 85, 21);
 		panelcampos.add(jRcliente);
 		
 		JRadioButton jRfuncionario = new JRadioButton("Funcionário");
-		jRfuncionario.setForeground(new Color(234, 170, 242));
+		jRfuncionario.setForeground(new Color(0, 0, 0));
 		jRfuncionario.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		jRfuncionario.setBounds(201, 309, 103, 21);
 		panelcampos.add(jRfuncionario);

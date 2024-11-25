@@ -1,5 +1,7 @@
 package br.com.model;
 
+import java.util.ArrayList;
+
 import br.com.DAO.ContaDAO;
 
 public class Cliente extends Usuario {
@@ -42,8 +44,10 @@ public class Cliente extends Usuario {
         return confirma;
     }
 
-	public String consultarExtrato() {
-		return "";
+	public ArrayList<String> consultarExtrato() throws Exception {
+        Conta conta = ContaDAO.findByClienteId(this.getId_usuario());
+        ArrayList<String> list = ContaDAO.extratoById(conta.getId_conta());
+		return list;
 	}
 
 	public double consultarLimite() throws Exception {

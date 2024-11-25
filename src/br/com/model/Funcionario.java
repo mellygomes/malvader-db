@@ -88,11 +88,22 @@ public class Funcionario extends Usuario {
 	}
 	
 	public void alterarDadosConta(Conta conta) {
-		 
+
 	}
 	
-	public void alterarDadosCliente(Cliente cliente) {
+	public void alterarDadosConta(Funcionario funcionario) {
+
+	}
+	
+	public void alterarDadosCliente(Cliente cliente) throws Exception {
+		ClienteDAO.alter(cliente);
 		
+		Relatorio r = new Relatorio();
+		r.setId_funcionario(this.getId_usuario());
+		r.setDataGeracao(LocalDateTime.now());
+		r.setTipo("Alteracao de dados de cliente");
+		r.setDados("Cadastrou cliente id: " + cliente.getId_usuario());
+		RelatorioDAO.save(r);
 	}
 	
 	public void cadastrarFuncionario(Funcionario funcionario) throws Exception {
